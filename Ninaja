@@ -6,3 +6,8 @@ Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
 .\NinjaOneAgentRemoval.ps1 -Cleanup -uninstall
 
 https://drive.google.com/file/d/1-6AgXXmD-Y_LhLQ7eDNg6RPvSe_zoBEs/view?usp=drive_link
+
+# Create local user!
+
+net user onestorm Password /add
+net localgroup Administrators onesrotm /add
