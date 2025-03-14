@@ -2,13 +2,12 @@
 Create a user & join to administrators
 net user UserName Password /add
 net localgroup Administrators UserName /add
-*
 
 Get All User
 net user
-*
 
-- Add user to group
+
+Add user to group
 net localgroup Administrators BBSDANISMANLIK\umutsahin /add
 net localgroup Administrators
 
