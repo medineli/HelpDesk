@@ -1,0 +1,12 @@
+
+
+Create a user & join to administrators
+*
+net user UserName Password /add
+net localgroup Administrators UserName /add
+*
+
+Get All User
+*
+net user
+*
