@@ -1,0 +1,8 @@
+
+
+Enable SSL VPN fortigate in new version
+--------------------------
+con sys setting 
+set gui-sslvpn enable
+end
+---------------------------
