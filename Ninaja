@@ -1,11 +1,7 @@
 
 #1 Remove Ajent
-
+URL : https://drive.google.com/file/d/1-6AgXXmD-Y_LhLQ7eDNg6RPvSe_zoBEs/view?usp=drive_link
 Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
 .\NinjaOneAgentRemoval.ps1 -Cleanup -uninstall
-URL : https://drive.google.com/file/d/1-6AgXXmD-Y_LhLQ7eDNg6RPvSe_zoBEs/view?usp=drive_link
 
-#2 Create local user!
 
-net user onestorm Password /add
-net localgroup Administrators onesrotm /add
