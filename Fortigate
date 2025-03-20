@@ -1,5 +1,5 @@
 
-
+7.4.7 Open SSL VPN In GUI
 Enable SSL VPN fortigate in new version
 con sys setting 
 set gui-sslvpn enable
