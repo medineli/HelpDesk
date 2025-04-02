@@ -1,0 +1,17 @@
+
+POWERSHELL 
+
+"Auto Expanding Archive Enabled
+
+Set-Executionpolicy Remotesigned
+
+Install-Module ExchangeOnlineManagement
+
+Import-Module ExchangeOnlineManagement
+
+Connect-ExchangeOnline -UserPrincipalName 'yetkılı mail adresi'
+
+Enable-Mailbox "İşlem yapılcak mail adresi" -AutoExpandingArchive
+
+Get-Mailbox "İşlem yapılcak mail adresi" | FL AutoExpandingArchiveEnabled
+"
