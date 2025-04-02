@@ -11,3 +11,9 @@ Add user to group
 net localgroup Administrators BBSDANISMANLIK\umutsahin /add
 net localgroup Administrators
 
+Bypass NRO
+Old
+oobe\bypassnro
+NEW
+start ms-cxh:localonly
+
