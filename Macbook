@@ -1,0 +1,31 @@
+
+
+Forticlient Tray
+
+MacBook'inizde macOS Sequoia (sürüm 15) yüklüyse ve FortiClient/FortiTray için izin vermeniz gerekiyorsa, aşağıdaki adımları takip edebilirsiniz:
+1. FortiTray'e İzin Verme
+
+    Sistem Ayarları > Genel > Giriş Öğeleri ve Uzantılar > Ağ Uzantıları bölümüne gidin.
+
+    FortiTray uygulamasını bulun ve etkinleştirin (açın).
+
+Eğer “FortiTray yazılımı engellendi” gibi bir uyarı çıkarsa, İptal tuşuna basın, ardından yukarıdaki adımları manuel olarak uygulayarak izin verin.
+2. Tam Disk Erişimi Verme (Gerekirse)
+
+    Sistem Ayarları > Gizlilik ve Güvenlik > Tam Disk Erişimi bölümüne gidin.
+
+    Aşağıdaki iki uygulamayı bu listeye ekleyin ve izin verin:
+
+        FortiClient.app
+
+        fctservctl2
+
+    Ekleme işlemi için + simgesine tıklayıp sırasıyla bu yolları izleyin:
+
+    /Applications/FortiClient.app
+
+    /Library/Application Support/Fortinet/FortiClient/bin/fctservctl2
+
+3. Mac’i Yeniden Başlatın
+
+Değişikliklerin geçerli olması için sisteminizi yeniden başlatmanız gerekebilir.
