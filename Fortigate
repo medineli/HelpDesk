@@ -1,4 +1,13 @@
 
+Enable two Factor Auth with mail 
+
+config user local
+edit "username"
+set two-factor email
+set email-to "mail@domain.com"
+end
+
+
 7.4.7 Open SSL VPN In GUI
 Enable SSL VPN fortigate in new version
 con sys setting 
