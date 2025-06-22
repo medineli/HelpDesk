@@ -1,4 +1,17 @@
 
+Set Interface mode to dhcp:
+Config system interface
+edit port1
+set mode dhcp
+# Set allow access to access from http
+set allowaccess https http ssh
+end
+
+# to confirm the changes
+get system interface physical
+
+
+
 Enable two Factor Auth with mail 
 
 config user local
