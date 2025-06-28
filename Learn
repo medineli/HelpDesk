@@ -1,0 +1,68 @@
+
+Stop waiting
+crtl + shift + 6
+
+
+-----
+enable (en)
+configure terminal (conf t)
+
+hostname SW1 (hostname -> host)
+# take backopeation "no hostname SW1"
+
+# give password to en
+enable password sisco
+
+# enable to make 5 conneciton at same time
+line vty 0 4
+password sisco
+login
+
+# meke vlan and give ip to it 
+interface vlan 1
+ip address 192.168.1.5 255.255.255.0
+# enable the vlan
+no shutdown (sh)
+exit
+
+# if you type a wrong command it will make you wait 60 sn to make lookup
+no ip domain-lookup
+
+copy ruuning-config startu-config  (wr)
+
+-------
+
+------
+en
+conf t
+hostname SW1 
+
+enable password sisco
+
+interface vlan 1
+ip address 192.168.1.5 255.255.255.0
+no sh 
+exit
+
+line vty 0 4
+password sisco
+login
+exit
+
+no ip domain-lookup
+------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
