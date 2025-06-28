@@ -26,5 +26,6 @@ arp -a
 
 ipconfig/displaydns | more
 
+nslookup www.cisco.com
 
 
