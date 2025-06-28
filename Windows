@@ -24,5 +24,7 @@ Network:
 
 arp -a
 
+ipconfig/displaydns | more
+
 
 
