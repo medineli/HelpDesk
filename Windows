@@ -17,3 +17,12 @@ oobe\bypassnro
 NEW
 start ms-cxh:localonly
 
+
+CMD: 
+
+Network: 
+
+arp -a
+
+
+
