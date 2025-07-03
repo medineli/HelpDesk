@@ -15,3 +15,12 @@ Enable-Mailbox "İşlem yapılcak mail adresi" -AutoExpandingArchive
 
 Get-Mailbox "İşlem yapılcak mail adresi" | FL AutoExpandingArchiveEnabled
 "
+
+
+# Enable SMTP From Powershell
+Connect-ExchangeOnline -UserPrincipalName admin@yourdomain.com
+Set-CASMailbox -Identity "user@yourdomain.com" -SmtpClientAuthenticationDisabled $false
+
+Check
+Get-CASMailbox -Identity "user@yourdomain.com" | Select SmtpClientAuthenticationDisabled
+
