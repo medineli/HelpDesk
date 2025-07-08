@@ -24,5 +24,13 @@ Network:
 
 arp -a
 
+******************
+RDP UDP to TCP 
+
+https://zomro.com/blog/faq/429-dissable-udp-for-rdp-on-windows
+
+HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services\Client\
+fClientDisableUDP => 1
+******************
 
 
