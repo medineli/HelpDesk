@@ -24,3 +24,23 @@ Set-CASMailbox -Identity "user@yourdomain.com" -SmtpClientAuthenticationDisabled
 Check
 Get-CASMailbox -Identity "user@yourdomain.com" | Select SmtpClientAuthenticationDisabled
 
+
+****************
+SPF from : Admin center > setting > Domain Edit ...
+
+DKIM From : Security > Email & collaboraion > Policeies & rules > DKIM ...
+
+DMARK : Add txt to DNS 
+
+_dmarc
+to email to nones
+"v=DMARC1; p=none; rua=mailto:5782b7b30e6d4fcf99d3828800a3b850@dmarc-reports.cloudflare.net"
+
+to none
+"v=DMARC1; p=none; pct=100;"
+
+Y can add more
+
+
+****************
+
