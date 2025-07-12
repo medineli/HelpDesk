@@ -49,8 +49,12 @@ login
 Ruijie Egitimi
 
 en
+show version
+
 conf t
 hostname SW1 
+
+set system clock : 11:22:00 UTC Fri, Sep 16, 2022
 
 enable password sisco
 
