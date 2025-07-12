@@ -1,13 +1,26 @@
+Tricks
+----------------------------
+Stop waiting (# if you type a wrong command it will make you wait 60 sn to make lookup)
+1) no ip domain-lookup
+2) crtl + shift + 6
 
-Stop waiting
-crtl + shift + 6
+----------------------------
+log Sort
+enable -> en
+configure terminal -> conf t
+copy ruuning-config startu-config  -> wr
 
------
-enable (en)
-configure terminal (conf t)
+hostname -> host
+ex:
+hostname SW1
+host SW1 
+ANDO:
+no hostname SW1
 
-hostname SW1 (hostname -> host)
-# take backopeation "no hostname SW1"
+----------------------------
+Configure: 
+
+conf t
 
 # give password to en
 enable password sisco
@@ -15,7 +28,7 @@ enable password sisco
 # default gateway
 ip default-gateway 192.168.1.1
 
-# meke vlan and give ip to it 
+# meke vlan and give ip 
 interface vlan 1
 ip address 192.168.1.5 255.255.255.0
 # enable the vlan
@@ -32,15 +45,9 @@ end
 line vty 0 4
 password sisco
 login
+----------------------------
+Ruijie Egitimi
 
-# if you type a wrong command it will make you wait 60 sn to make lookup
-no ip domain-lookup
-
-copy ruuning-config startu-config  (wr)
-
--------
-
-------
 en
 conf t
 hostname SW1 
