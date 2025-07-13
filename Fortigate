@@ -27,4 +27,15 @@ con sys setting
 set gui-sslvpn enable
 end
 
+change dns protocol to UDP
+
+config system fortiguard
+    set fortiguard-anycast disable
+    set protocol udp
+    set port 8888
+    set auto-firmware-upgrade disable
+    set antispam-cache-ttl 500
+    set webfilter-cache-ttl 500
+    set sdns-server-ip "208.91.112.220" 
+end
 
