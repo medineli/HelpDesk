@@ -54,23 +54,194 @@ show version
 conf t
 hostname SW1 
 
-set system clock : 11:22:00 UTC Fri, Sep 16, 2022
+-
 
 enable password sisco
+-
+console port pass
+
+conf t 
+line console 0
+password ŞifreyiYaz
+login
+exit
+-
+
+set system clock : 11:22:00 UTC Fri, Sep 16, 2022
+
+reload -> to reboot
+
 
 interface vlan 1
 ip address 192.168.1.5 255.255.255.0
 no sh 
 exit
 
-line vty 0 4
+line vty 0 4 ( VTY (Virtual Teletype)SSH veya Telnet için kullanılır. 0 4 -> aynı anda 5 bağlantı hakkı verir)
 password sisco
 login
 exit
 
+şifreleri güvenlı bir şekilde saklamak için password-encryption servisi kullanılır
+conf t 
+service password-encryption
+end
+
+shwo service -> to display ehat service is avctive
+
+to access from web
+conf t 
+enable service web-server
+to make a user for web 
+conf t 
+webmaster level 0 username admin password admin 
+
+-
+vlans
+show vlan
+vlan 1 is defalut vlan
+
+Static - dynamic -
+
+
+-
+ untagged
+mode access (Untagged) - trunk (tagged) - dynamic tecih etme
+
+access -> The port belongs to only one VLAN.
+switchport mode access
+switchport access vlan 10
+trunk  -> The port carries multiple VLANs using tags (802.1Q).
+switchport mode trunk
+switchport trunk allowed vlan 10,20,30
+-
+
+conf t 
+vlan 10
+name BT 
+vlan 20
+name IK 
+end
+
+conf t 
+int gi0/2
+switchport mode access -> this step is for incrase security
+switchport access vlan 10
+no sh
+
+-
+voice vlan 
+vlan 10
+name voice
+vlan 20
+name data
+exi
+voice vlan 10
+int gi0/3
+switchport mode hybrid
+switchport hybrid native vlan 20
+switchport hybrid allowed vlan add tagged 10
+no vioce vlan mode auto
+vioce vlan enable
+end
+
+-
+Trunk port
+sh interface
+cont f
+int gi0/12
+switch port mode trunk
+switchport trunk allowed vlan add 10,20
+switchport trunk allowed vlan only 10
+-
+
+vlan routing
+
+kenar switch
+conf t 
+vlan 10 
+name IK
+vlan 20 
+name BT
+int gi0/1
+switchport mode access
+switchport access vlan 10
+no sh
+exi 
+int gi0/2
+switchport mode access
+switchport access vlan 20
+no sh
+exi
+int gi0/12
+switchport mode trunk
+end
+
+wr
+
+backbone
+conf t
+vlan 10 
+name IK
+vlan 20 
+name BT
+
+int vlan 10 
+ip address 192.168.10.1 255.255.255.0
+no sh
+exi
+
+int vlan 20 
+ip address 192.168.20.1 255.255.255.0
+no sh
+
+ip relay
+ip helper-address 192.168.100.100 (DHCP seerver ip)
+end
+
+interface gi0/24 
+switchport mode trunk
+-
+
+-
+SSH 
+conf t
+interface vlan 1
+ip address 192.168.35.35 255.255.255.0
+no sh
+exi
+enable service ssh-server
+crypto key generate dsa 
+1024 bit
+line vty 0 4 
+login local 
+exi
+username admin password admin
+enbale secret ruci
+wr
+-
+
+
+
+
+show vlan 
+show interface trunk
+show ip interface brief
+
+
+
+
+
+
+
+
+
+
+
+
 no ip domain-lookup
 ------
-
+Vlan duonble tagging vlan huping
 
 
 
