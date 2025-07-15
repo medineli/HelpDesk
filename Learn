@@ -220,13 +220,36 @@ username admin password admin
 enbale secret ruci
 wr
 -
+Spaning Tree
+conf t 
+spaning-tree
+spaning-tree mode ?
+use Multible (mstp) or what u can use if your device is not support mstp
+spanning-tree priority 0 (saldırıları azaltmak için)
+spaning-tree pathcost method 
+spaning-tree 
 
+if client connect to port
+int gi 0/6
+spaning-tree portfast
+spaning-tree bpduguard enable
+-
+
+Etherchennel yapılandırıması (link agrigation)  
+
+1 cisco int 5 ve 6
+conf t 
+
+int range fastEhetnet 0/5-6
+channel-group 1 mode active
+end
 
 
 
 show vlan 
 show interface trunk
 show ip interface brief
+show etherchannel summary
 
 
 
