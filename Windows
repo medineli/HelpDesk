@@ -59,6 +59,12 @@ icacls C:\Windows\script\gmail.secure /grant "SYSTEM:(R)"
 
 3. Copy the file to the location 
 4. Create The task by using the pdf
+AD User Alert
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+C:\Windows\script\AD_UserEnabled_Alert.ps1
+C:\Windows\
+
+
 5. Eneble Audit User Account Management
 W + R -> gpmc.msc
 Computer Configuration
