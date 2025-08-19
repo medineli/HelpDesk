@@ -71,6 +71,26 @@ Computer Configuration
 -> gpupdate /force
 
 
+
+| **Action**                                    | **Event ID**                 | **Notes**                                     |
+| --------------------------------------------- | ---------------------------- | --------------------------------------------- |
+| User account **created**                      | **4720**                     | Logged when a new AD account is made          |
+| User account **enabled**                      | **4722**                     | Logged when a disabled user is re-enabled     |
+| User account **disabled**                     | **4725**                     | Logged when an account is disabled            |
+| User account **deleted**                      | **4726**                     | Logged when an AD account is removed          |
+| **Password reset**                            | **4724**                     | Someone (admin) resets a user’s password      |
+| User added to a **security group**            | **4728**                     | User added to a **global** security group     |
+| User removed from a **security group**        | **4729**                     | User removed from a **global** security group |
+| User added to a **universal group**           | **4756**                     | Similar to 4728 but for universal groups      |
+| User removed from a **universal group**       | **4757**                     | Similar to 4729 but for universal groups      |
+| User added to a **local group**               | **4732**                     | User added to a local group (on a DC)         |
+| User removed from a **local group**           | **4733**                     | User removed from a local group               |
+| User account **locked out**                   | **4740**                     | When an account gets locked due to bad logons |
+| Security-enabled group **created**            | **4727**                     | New security group created                    |
+| Security-enabled group **deleted**            | **4730**                     | Security group deleted                        |
+| Security-enabled group **membership changed** | **4731**, **4732**, **4733** | Track adds/removes                            |
+
+
 *****************************
 
 
