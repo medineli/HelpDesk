@@ -8,3 +8,10 @@ Office-Reset is a free downloadable tool that you can use to fix problems and er
 This includes Word, Excel, PowerPoint, Outlook, OneNote, OneDrive, Teams and AutoUpdate. 
 The tool can help fix app launch errors, freezes, hangs, crashes, bad plug-ins, corrupt templates, performance issues, and confusing error messages.
 https://office-reset.com/
+
+
+
+reset 30 gunluk lisans
+cd : C:\Program Files\Microsoft Office\Office16
+cscript ospp.vbs /dtatus
+cscript ospp.vbs /rearm
