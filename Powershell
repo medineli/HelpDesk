@@ -1,1 +1,4 @@
+Kontrol RDH
 
+$gracePeriodDays = (Get-WmiObject -Namespace "Root\CIMv2\TerminalServices" -Class Win32_TerminalServiceSetting).GetGracePeriodDays()
+$gracePeriodDays.DaysLeft
