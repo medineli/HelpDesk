@@ -100,4 +100,13 @@ Computer Configuration
 *****************************
 
 
+Silinmeyen dosyayı zorla silmek Powershell
+
+1- PowerShell’i Yönetici olarak aç.
+
+Şu komutu çalıştır:
+
+Remove-Item "\\?\C:\Users\<KullanıcıAdı>\Desktop\*.pdf" -Force
+
+*********************************
 
