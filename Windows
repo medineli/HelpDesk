@@ -110,3 +110,11 @@ Remove-Item "\\?\C:\Users\<KullanıcıAdı>\Desktop\*.pdf" -Force
 
 *********************************
 
+Service silmek :
+CMD
+c:\Windows\System32>sc.exe
+sc query type= service state= all
+sc config "ServisAdı" start= disabled
+sc stop "ServisAdı"
+sc delete ServisAdı
+
