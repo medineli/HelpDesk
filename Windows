@@ -118,3 +118,8 @@ sc config "ServisAdı" start= disabled
 sc stop "ServisAdı"
 sc delete ServisAdı
 
+****************
+gpresult /r
+gpresult /h report.html
+gpresult /h C:\gpresult.html
+
