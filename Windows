@@ -123,3 +123,7 @@ gpresult /r
 gpresult /h report.html
 gpresult /h C:\gpresult.html
 
+*****************
+
+Boot into Audit Mode (Ctrl+Shift+F3)
+
