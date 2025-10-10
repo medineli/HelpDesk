@@ -12,6 +12,8 @@ https://office-reset.com/
 
 
 reset 30 gunluk lisans
-cd : C:\Program Files\Microsoft Office\Office16
-cscript ospp.vbs /dtatus
-cscript ospp.vbs /rearm
+
+cd C:\Program Files\Microsoft Office\Office16
+cscript ospp.vbs /dstatus
+
+ospprearm.exe (sku id)
