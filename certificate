@@ -1,0 +1,7 @@
+
+If you have old pfx (Update certificate)
+1- Extract private key from pfx
+openssl pkcs12 -in cert.pfx -nocerts -out private.pem
+
+2- Create pfx using private key and crt
+openssl pkcs12 -export -out new.pfx -inkey private.pem -in newcert.crt
