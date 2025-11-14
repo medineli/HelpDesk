@@ -1,4 +1,7 @@
 
+
+
+**************
 If you have old pfx (Update certificate)
 1- Extract private key from pfx
 openssl pkcs12 -in cert.pfx -nocerts -out private.pem
