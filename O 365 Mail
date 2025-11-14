@@ -1,20 +1,31 @@
 
 POWERSHELL 
 
-"Auto Expanding Archive Enabled
-
+*****************
+Auto Expanding Archive Enabled
 Set-Executionpolicy Remotesigned
-
 Install-Module ExchangeOnlineManagement
-
 Import-Module ExchangeOnlineManagement
 
 Connect-ExchangeOnline -UserPrincipalName 'yetkılı mail adresi'
-
 Enable-Mailbox "İşlem yapılcak mail adresi" -AutoExpandingArchive
-
 Get-Mailbox "İşlem yapılcak mail adresi" | FL AutoExpandingArchiveEnabled
 "
+****************
+Çevrimiçi arşiv açtıktan sonra tetiklemek için kullanılacak komutlar
+connect-exchangeonline
+Start-ManagedFolderAssistant -Identity user@mail.com
+Start-ManagedFolderAssistant -Identity user@mail.com -FullCrawl
+Start-ManagedFolderAssistant -Identity user@mail.com -AggMailboxCleanup
+ 
+
+
+Otomatik genişleyen arşivi tetikleme
+Enable-Mailbox grafik@sudesan.com -AutoExpandingArchive
+Kontrol komutu
+Get-Mailbox grafik@sudesan.com | FL ArchiveStatus
+Get-Mailbox grafik@sudesan.com | FL AutoExpandingArchiveEnabled
+************
 
 
 # Enable SMTP From Powershell
