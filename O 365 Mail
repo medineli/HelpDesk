@@ -1,4 +1,4 @@
-
+@
 Install office 2024 f
 
 https://config.office.com/deploymentsettings
@@ -32,10 +32,10 @@ Start-ManagedFolderAssistant -Identity user@mail.com -AggMailboxCleanup
 
 
 Otomatik genişleyen arşivi tetikleme
-Enable-Mailbox grafik@sudesan.com -AutoExpandingArchive
+Enable-Mailbox grafik@an.com -AutoExpandingArchive
 Kontrol komutu
-Get-Mailbox grafik@sudesan.com | FL ArchiveStatus
-Get-Mailbox grafik@sudesan.com | FL AutoExpandingArchiveEnabled
+Get-Mailbox grafik@n.com | FL ArchiveStatus
+Get-Mailbox grafik@an.com | FL AutoExpandingArchiveEnabled
 ************
 
 
@@ -56,7 +56,7 @@ DMARK : Add txt to DNS
 
 _dmarc
 to email to nones
-"v=DMARC1; p=none; rua=mailto:5782b7b30e6d4fcf99d3828800a3b850@dmarc-reports.cloudflare.net"
+"v=DMARC1; p=none; rua=mailto:5782b7a3b850@dmarc-reports.cloudflare.net"
 
 to none
 "v=DMARC1; p=none; pct=100;"
