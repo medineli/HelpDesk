@@ -108,6 +108,11 @@ Silinmeyen dosyayı zorla silmek Powershell
 
 Remove-Item "\\?\C:\Users\<KullanıcıAdı>\Desktop\*.pdf" -Force
 
+take ower ship
+takeown /f "C:\Users\file" /r /d y
+icacls "C:\Users\file" /grant administrators:F /t
+
+
 *********************************
 
 Service silmek :
