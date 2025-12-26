@@ -1,7 +1,5 @@
 
 
-
-
 MAC:
 
 Office-Reset is a free downloadable tool that you can use to fix problems and errors encountered with Microsoft Office for Mac apps.
@@ -9,7 +7,7 @@ This includes Word, Excel, PowerPoint, Outlook, OneNote, OneDrive, Teams and Aut
 The tool can help fix app launch errors, freezes, hangs, crashes, bad plug-ins, corrupt templates, performance issues, and confusing error messages.
 https://office-reset.com/
 
-
+------------------------
 
 reset 30 gunluk lisans
 
@@ -17,3 +15,19 @@ cd C:\Program Files\Microsoft Office\Office16
 cscript ospp.vbs /dstatus
 
 ospprearm.exe (sku id)
+
+--------------------
+
+Tool to remove office
+https://www.alitajran.com/uninstall-microsoft-office/
+
+
+----------------
+install office 365 2024
+1- Create Config file
+2- Download Office Deployment Tool 
+ https://www.microsoft.com/en-us/download/details.aspx?id=49117
+3- mkdir c:\office
+4- run the tool and make extrack the setup to c:\office
+5- config file to c:\office
+6- run powershell :  cd c:\office -> .\setup.exe /configure config.xml
