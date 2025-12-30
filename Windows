@@ -8,7 +8,7 @@ net user
 
 
 Add user to group
-net localgroup Administrators BBSDANISMANLIK\umutsahin /add
+net localgroup Administrators domain\user /add
 net localgroup Administrators
 
 Bypass NRO
