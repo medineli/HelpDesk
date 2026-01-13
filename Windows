@@ -6,6 +6,8 @@ net localgroup Administrators UserName /add
 Get All User
 net user
 
+check windows logon time: query user
+
 
 Add user to group
 net localgroup Administrators domain\user /add
