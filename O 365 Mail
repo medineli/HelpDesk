@@ -66,3 +66,16 @@ Y can add more
 
 ****************
 
+Get all rules in mailbox
+$Mailbox = "user@domain.com"
+
+Get-InboxRule -Mailbox $Mailbox -IncludeHidden | Select-Object Name, Enabled, Priority, RuleIdentity, RedirectTo, ForwardTo, MoveToFolder, DeleteMessage, Description | Format-Table -AutoSize
+
+- Get from table result
+$ruleId = "5693957303879860225"
+
+Remove-InboxRule -Mailbox $Mailbox -Identity $ruleId -Confirm:$false
+
+****************
+
+
