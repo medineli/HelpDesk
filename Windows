@@ -109,12 +109,22 @@ Silinmeyen dosyayı zorla silmek Powershell
 Şu komutu çalıştır:
 
 Remove-Item "\\?\C:\Users\<KullanıcıAdı>\Desktop\*.pdf" -Force
+Remove-Item -LiteralPath C:\problem.pdf -Force
+
+isimde sorunvarsa once ismi revize et $ gibi karekter
+Get-ChildItem -Force
+Ornek isim : ebld.catalca.bel.tr_reports2_result__rky=23322F3CF16242DF39FF19389A87cmVwb3J0PUdlbGlybGVyJTVDUlBSX0dFTDAwMzVfVEFIU0lMQVRNQUtCVVouZnIzJlRBSFNJTEFUX05PPTE1OTI1NDImS0lTSUxJS19OTz0xMDc0MDAyMDQ0Mg$SE$SEB793F16E5B
+
+
+C:\ -Filter '*.pdf' -Recurse -ErrorAction SilentlyContinue |  Where-Object { $_.Name -like '*$SE$SEB793F16E5B33*' } | >> Select-Object FullName
+Move-Item -LiteralPath ("\\?\" + $_.FullName) -Destination 'C:\problem.pdf' -Force
+Remove-Item -LiteralPath C:\problem.pdf -Force
 
 take ower ship
 takeown /f "C:\Users\file" /r /d y
 icacls "C:\Users\file" /grant administrators:F /t
 
-
+Rename-Item -LiteralPath C:\Temp -NewName 'problem.pdf' isim revize
 *********************************
 
 Service silmek :
