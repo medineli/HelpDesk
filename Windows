@@ -154,5 +154,19 @@ reg delete "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}" 
 
 ****************
 
+net stop w32time
+w32tm /unregister
+w32tm /register
+net start w32time
+
+w32tm /config /manualpeerlist:"pool.ntp.org" /syncfromflags:manual /reliable:YES /update
+net stop w32time
+net start w32time
+w32tm /resync
+
+w32tm /resync /force
+w32tm /query /source
+
+****************
 
 
