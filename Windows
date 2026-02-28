@@ -1,82 +1,36 @@
+***************
+User opereations:
 
-Create a user & join to administrators
+- Get All User
+net user
+
+- Create a user & join to administrators
 net user UserName Password /add
 net localgroup Administrators UserName /add
 
-Get All User
-net user
-
-check windows logon time: query user
-
-
-Add user to group
+- Add domain user to group
 net localgroup Administrators domain\user /add
 net localgroup Administrators
 
-Bypass NRO
-Old
+
+- Check windows users logon time: 
+query user
+
+- Bypass NRO
 oobe\bypassnro
-NEW
+OR
 start ms-cxh:localonly
 
+- RDP UDP to TCP
+https://zomro.com/blog/faq/429-dissable-udp-for-rdp-on-windows
 
-CMD: 
+HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services\Client\
+fClientDisableUDP => 1
 
 Network: 
 
 arp -a
 
-******************
-RDP UDP to TCP 
-
-https://zomro.com/blog/faq/429-dissable-udp-for-rdp-on-windows
-
-HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services\Client\
-fClientDisableUDP => 1
-******************
-
-AD Enable user:
-1. Enable Gmail SMTP Access
-
-    Go to: Google App Passwords
-
-    Create app password:
-    Select App → Mail → Device → Windows Computer
-    Copy the 16-digit password
-
-2. Create Encrypted Password File
-
-Run in PowerShell as admin:
-powershell
-
-# Create folder
-mkdir C:\Windows\script -Force
-
-# THIS pops up password entry window
-$cred = Get-Credential -UserName "intercompdestek@gmail.com" -Message "Enter Gmail App Password"
-$cred.Password | ConvertFrom-SecureString | Set-Content C:\Windows\script\gmail.secure
-
-# Secure the file
-icacls C:\Windows\script\gmail.secure /grant "SYSTEM:(R)"
-
-3. Copy the file to the location 
-4. Create The task by using the pdf
-AD User Alert
-C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
-C:\Windows\script\AD_UserEnabled_Alert.ps1
-C:\Windows\
-
-
-5. Eneble Audit User Account Management
-W + R -> gpmc.msc
-Computer Configuration
-   → Policies
-      → Windows Settings
-         → Security Settings
-            → Advanced Audit Policy Configuration
-               → Audit Policies
-                  → Account Management
--> gpupdate /force
 
 
 
@@ -101,34 +55,28 @@ Computer Configuration
 
 *****************************
 
+Rename-Item -LiteralPath C:\Temp -NewName 'problem.pdf' isim revize
 
-Silinmeyen dosyayı zorla silmek Powershell
-
-1- PowerShell’i Yönetici olarak aç.
-
-Şu komutu çalıştır:
+- Silinmeyen dosyayı zorla silmek Powershell
 
 Remove-Item "\\?\C:\Users\<KullanıcıAdı>\Desktop\*.pdf" -Force
 Remove-Item -LiteralPath C:\problem.pdf -Force
 
-isimde sorunvarsa once ismi revize et $ gibi karekter
+Not:isimde sorunvarsa once ismi revize et $ gibi karekter
 Get-ChildItem -Force
 Ornek isim : ebld.catalca.bel.tr_reports2_result__rky=23322F3CF16242DF39FF19389A87cmVwb3J0PUdlbGlybGVyJTVDUlBSX0dFTDAwMzVfVEFIU0lMQVRNQUtCVVouZnIzJlRBSFNJTEFUX05PPTE1OTI1NDImS0lTSUxJS19OTz0xMDc0MDAyMDQ0Mg$SE$SEB793F16E5B
-
-
 C:\ -Filter '*.pdf' -Recurse -ErrorAction SilentlyContinue |  Where-Object { $_.Name -like '*$SE$SEB793F16E5B33*' } | >> Select-Object FullName
 Move-Item -LiteralPath ("\\?\" + $_.FullName) -Destination 'C:\problem.pdf' -Force
 Remove-Item -LiteralPath C:\problem.pdf -Force
 
-take ower ship
+- Take ower ship
 takeown /f "C:\Users\file" /r /d y
 icacls "C:\Users\file" /grant administrators:F /t
 
-Rename-Item -LiteralPath C:\Temp -NewName 'problem.pdf' isim revize
+
 *********************************
 
 Service silmek :
-CMD
 c:\Windows\System32>sc.exe
 sc query type= service state= all
 sc config "ServisAdı" start= disabled
@@ -139,7 +87,7 @@ sc delete ServisAdı
 gpresult /r
 gpresult /h report.html
 gpresult /h C:\gpresult.html
-
+gpresult /S bilgiislem /mbulbul sudesan\mbulbul /h C:\RSOP_Remote.html
 *****************
 Boot into Audit Mode (Ctrl+Shift+F3)
 
@@ -153,7 +101,7 @@ make it back again
 reg delete "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}" /f
 
 ****************
-
+- Time Sync
 net stop w32time
 w32tm /unregister
 w32tm /register
@@ -168,5 +116,9 @@ w32tm /resync /force
 w32tm /query /source
 
 ****************
+- Sistem Health check
+DISM /Online /Cleanup-Image /RestoreHealth
+sfc /scannow
 
+***********
 
