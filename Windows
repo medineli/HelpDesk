@@ -95,6 +95,17 @@ w32tm /query /source
 DISM /Online /Cleanup-Image /RestoreHealth
 sfc /scannow
 
+****************
+
+Remove Shutdown - reboot from UI  Group Policy (UI removal only)
+
+Use Group Policy Editor
+Run:
+gpedit.msc
+Go to: User Configuration → Administrative Templates → Start Menu and Taskbar
+Enable: Remove and prevent access to the Shut Down, Restart, Sleep, and Hibernate commands
+Apply: gpupdate /force
+
 ***********
 
 Network: 
